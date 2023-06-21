@@ -52,7 +52,7 @@ void stack_pall(stack_t **stack, unsigned int line_num);
 
 /*utility functions*/
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
-int is_all_digits(const char *str);
+int is_integer(const char *str);
 
 /*free functions*/
 void free_stack(stack_t **stack);
