@@ -59,3 +59,26 @@ void stack_pall(stack_t **stack, unsigned int line_num)
 		node = node->next;
 	}
 }
+
+
+/**
+ * stack_pint - The opcode pint prints the value at the top of the stack.
+ *
+ * @stack: refrance to stack to print it.
+ * @line_num: line num in Monty ByteCodes file.
+ *
+ * Return: void.
+*/
+void stack_pint(stack_t **stack, unsigned int line_num)
+{	
+	(void) line_num;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		printf("L%d: usage: can't pint, stack empty\n", line_num);
+		status = -1;
+		return;
+	}
+
+	printf("%d\n", (*stack)->n);
+}

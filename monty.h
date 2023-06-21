@@ -48,7 +48,7 @@ typedef struct instruction_s
 void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack);
 void stack_push(stack_t **stack, unsigned int line_num);
 void stack_pall(stack_t **stack, unsigned int line_num);
-
+void stack_pint(stack_t **stack, unsigned int line_num);
 
 /*utility functions*/
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
