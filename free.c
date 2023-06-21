@@ -9,6 +9,7 @@
 void free_stack(stack_t **stack)
 {
 	stack_t *node;
+	stack_t *next;
 
 	if (stack == NULL || *stack == NULL)
 		return;
@@ -16,7 +17,7 @@ void free_stack(stack_t **stack)
 	node = *stack;
 	while (node != NULL)
 	{
-		stack_t *next = node->next;
+		next = node->next;
 		free(node);
 		node = next;
 	}

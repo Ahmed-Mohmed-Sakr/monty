@@ -18,6 +18,9 @@ void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack)
 		{NULL, NULL}
 	};
 
+	if (opcode == NULL)
+		return;
+
 	for (i = 0; instructions[i].opcode != NULL; i++)
 	{
 		if (strcmp(instructions[i].opcode, opcode) == 0)

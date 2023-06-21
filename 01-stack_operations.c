@@ -31,10 +31,7 @@ void stack_push(stack_t **stack, unsigned int line_num)
 	new_node->next = NULL;
 	if (*stack != NULL)
 		new_node->next = *stack;
-		
-
 	*stack = new_node;
-	
 }
 
 /**
