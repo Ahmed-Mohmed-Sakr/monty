@@ -52,3 +52,25 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream)
 	*lineptr = new_lineptr;
 	return (pos + 1);
 }
+
+
+/**
+ * is_all_digits - check that all string is digits.
+ *
+ * @str: string to check it.
+ *
+ * Return: 0 if not and retuen 1 if all is digits.
+ */
+int is_all_digits(const char *str)
+{
+	if (*str == '\0')
+		return (0);
+	
+	while (*str != '\0')
+	{
+		if (!isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
+}

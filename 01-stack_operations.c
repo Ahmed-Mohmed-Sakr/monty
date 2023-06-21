@@ -13,7 +13,7 @@ void stack_push(stack_t **stack, unsigned int line_num)
 	char *arg = strtok(NULL, " \t\n");
 	stack_t *new_node;
 
-	if (arg == NULL)
+	if (arg == NULL || !is_all_digits(arg))
 	{
 		printf("L%d: usage: push integer\n", line_num);
 		free_stack(stack);

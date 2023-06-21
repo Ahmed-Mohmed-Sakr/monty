@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -48,6 +49,7 @@ void stack_pall(stack_t **stack, unsigned int line_num);
 
 /*utility functions*/
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
+int is_all_digits(const char *str);
 
 /*free functions*/
 void free_stack(stack_t **stack);
