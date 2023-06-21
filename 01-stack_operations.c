@@ -70,7 +70,7 @@ void stack_pall(stack_t **stack, unsigned int line_num)
  * Return: void.
 */
 void stack_pint(stack_t **stack, unsigned int line_num)
-{	
+{
 	(void) line_num;
 
 	if (stack == NULL || *stack == NULL)
