@@ -75,10 +75,37 @@ void stack_pint(stack_t **stack, unsigned int line_num)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		printf("L<%d>: usage: can't pint, stack empty\n", line_num);
+		printf("L<%d>: can't pint, stack empty\n", line_num);
 		status = -1;
 		return;
 	}
 
 	printf("%d\n", (*stack)->n);
+}
+
+
+
+/**
+ * stack_pop - pop removes the top element of the stack.
+ *
+ * @stack: refrance to stack to print it.
+ * @line_num: line num in Monty ByteCodes file.
+ *
+ * Return: void.
+*/
+void stack_pop(stack_t **stack, unsigned int line_num)
+{
+	stack_t *node;
+	(void) line_num;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		printf("L<%d>: can't pop an empty stack\n", line_num);
+		status = -1;
+		return;
+	}
+
+	node = *stack;
+	(*stack) = node->next;
+	free(node);
 }
