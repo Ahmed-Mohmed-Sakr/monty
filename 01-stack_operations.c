@@ -15,7 +15,7 @@ void stack_push(stack_t **stack, unsigned int line_num)
 
 	if (arg == NULL || !is_integer(arg))
 	{
-		printf("L%d: usage: push integer\n", line_num);
+		printf("L<%d>: usage: push integer\n", line_num);
 		status = -1;
 		return;
 	}
@@ -75,7 +75,7 @@ void stack_pint(stack_t **stack, unsigned int line_num)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		printf("L%d: usage: can't pint, stack empty\n", line_num);
+		printf("L<%d>: usage: can't pint, stack empty\n", line_num);
 		status = -1;
 		return;
 	}
