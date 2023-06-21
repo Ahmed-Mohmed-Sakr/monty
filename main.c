@@ -10,13 +10,15 @@
  */
 int main(int argc, char **argv)
 {
-	char *delim = " \t\n"; /*glopal var*/
-	stack_t **stack = NULL; /*glopal var*/
-	FILE *file;
+	FILE *opcode_file;
 	char *line;
 	char *opcode;
 	size_t line_len = 0;
-	long int line_num = 1;
+	unsigned int line_num = 1;
+	char *delim = " \t\n"; /*glopal var*/
+	stack_t **stack = NULL; /*glopal var*/
+
+	(void)stack;
 
 	if (argc != 2)
 	{
@@ -31,10 +33,10 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	while (getline(&line, &line_len, opcode_file))
+	while (my_getline(&line, &line_len, opcode_file) != -1)
 	{
 		opcode = strtok(line, delim);
-		execute_instruction(opcode, line_num, "stack");
+		execute_instruction(opcode, line_num, stack);
 		line_num++;
 	}
 	free(line);

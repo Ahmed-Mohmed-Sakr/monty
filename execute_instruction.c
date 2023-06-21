@@ -4,12 +4,12 @@
  * execute_instruction - to execute Monty ByteCodes.
  *
  * @opcode: instruction to exxecute.
- * @line_num: number of line of Monty ByteCodes files.
- * @datastruc_type: to determine the type of datastrcre.
+ * @line_n: number of line of Monty ByteCodes files.
+ * @stack: refrane to stack.
  *
  * return: void.
  */
-void execute_instruction(char *opcode, long int line_num, char *datastruc_type)
+void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack)
 {
 	int i;
 	instruction_t instructions[] = {
@@ -22,11 +22,10 @@ void execute_instruction(char *opcode, long int line_num, char *datastruc_type)
 	{
 		if (strcmp(instructions[i].opcode, opcode) == 0)
 		{
-			if (strcmp(datastruc_type, "stack") == 0)
-				instructions[i].f(stack, line_num);
+			instructions[i].f(stack, line_n);
 			return;
 		}
 	}
-	printf("L%ld: unknown instruction %s\n", line_num, opcode);
+	printf("L%d: unknown instruction %s\n", line_n, opcode);
 	exit(EXIT_FAILURE);
 }

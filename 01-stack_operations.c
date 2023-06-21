@@ -8,14 +8,14 @@
  *
  * Return: void.
 */
-void stack_push(stack_t **stack, long int line_num)
+void stack_push(stack_t **stack, unsigned int line_num)
 {
-	char *arg = strtok(NULL, delim);
+	char *arg = strtok(NULL, " \t\n");
 	stack_t *new_node;
 
 	if (arg == NULL)
 	{
-		printf("L%d: usage: push integer\n", line_number);
+		printf("L%d: usage: push integer\n", line_num);
 		exit(EXIT_FAILURE);
 	}
 
@@ -42,7 +42,7 @@ void stack_push(stack_t **stack, long int line_num)
  *
  * Return: void.
 */
-void stack_pall(stack_t **stack, long int line_num)
+void stack_pall(stack_t **stack, unsigned int line_num)
 {
 	stack_t *node = *stack;
 

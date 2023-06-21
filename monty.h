@@ -1,10 +1,11 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/*lib*/
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
-#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -44,8 +45,12 @@ extern char *delim;
 extern stack_t **stack;
 
 /*project main functions*/
-void execute_instruction(char *opcode, long int line_num, char *datastr_type);
-void stack_push(stack_t **stack, long int line_num);
-void stack_pall(stack_t **stack, long int line_num);
+void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack);
+void stack_push(stack_t **stack, unsigned int line_num);
+void stack_pall(stack_t **stack, unsigned int line_num);
 
-#endif
+
+/*utility functions*/
+ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
+
+#endif /*MONTY_H*/
