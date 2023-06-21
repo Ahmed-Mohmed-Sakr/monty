@@ -44,6 +44,8 @@ extern char *delim;
 extern stack_t **stack;
 
 /*project main functions*/
-void execute_instruction(char *opcode, long int line_number, char *datastruc_type);
+void execute_instruction(char *opcode, long int line_num, char *datastr_type);
+void push(stack_t **stack, unsigned int line_num);
+void pall(stack_t **stack, unsigned int line_num);
 
 #endif
