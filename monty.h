@@ -25,7 +25,7 @@ typedef struct stack_s
 
 /**
  * struct instruction_s - opcode and its function
- * 
+ *
  * @opcode: the opcode
  * @f: function to handle the opcode
  *
@@ -45,7 +45,7 @@ extern stack_t **stack;
 
 /*project main functions*/
 void execute_instruction(char *opcode, long int line_num, char *datastr_type);
-void push(stack_t **stack, unsigned int line_num);
-void pall(stack_t **stack, unsigned int line_num);
+void stack_push(stack_t **stack, long int line_num);
+void stack_pall(stack_t **stack, long int line_num);
 
 #endif

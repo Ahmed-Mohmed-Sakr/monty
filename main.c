@@ -1,8 +1,14 @@
 #include "monty.h"
 
 /**
+ * main - entery point to start interpreter for Monty ByteCodes files.
+ *
+ * @argc: argments count.
+ * @argv: values passed program.
+ *
+ * Return: 0 on Success
  */
-void main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	char *delim = " \t\n"; /*glopal var*/
 	stack_t **stack = NULL; /*glopal var*/
@@ -33,5 +39,5 @@ void main(int argc, char **argv)
 	}
 	free(line);
 	fclose(opcode_file);
-	return 0;
+	return (0);
 }
