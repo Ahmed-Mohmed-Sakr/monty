@@ -41,7 +41,6 @@ void stack_swap(stack_t **stack, unsigned int line_num)
 void stack_add(stack_t **stack, unsigned int line_num)
 {
 	stack_t *node;
-	int temp;
 
 	(void) line_num;
 
