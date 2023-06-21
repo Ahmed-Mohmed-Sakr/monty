@@ -5,11 +5,12 @@
 void main(int argc, char **argv)
 {
 	char *delim = " \t\n"; /*glopal var*/
+	stack_t **stack = NULL; /*glopal var*/
 	FILE *file;
 	char *line;
 	char *opcode;
 	size_t line_len = 0;
-	long long int line_num = 1;
+	long int line_num = 1;
 
 	if (argc != 2)
 	{
@@ -27,7 +28,7 @@ void main(int argc, char **argv)
 	while (getline(&line, &line_len, opcode_file))
 	{
 		opcode = strtok(line, delim);
-		execute_instruction(opcode, line_num);
+		execute_instruction(opcode, line_num, "stack");
 		line_num++;
 	}
 	free(line);

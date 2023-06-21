@@ -41,8 +41,9 @@ typedef struct instruction_s
 
 /*glopal var*/
 extern char *delim;
+extern stack_t **stack;
 
 /*project main functions*/
-void execute_instruction(char *opcode, unsigned int line_number);
+void execute_instruction(char *opcode, long int line_number, char *datastruc_type);
 
 #endif
