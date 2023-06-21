@@ -50,6 +50,7 @@ void stack_push(stack_t **stack, unsigned int line_num);
 void stack_pall(stack_t **stack, unsigned int line_num);
 void stack_pint(stack_t **stack, unsigned int line_num);
 void stack_pop(stack_t **stack, unsigned int line_num);
+void stack_swap(stack_t **stack, unsigned int line_num);
 
 /*utility functions*/
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
