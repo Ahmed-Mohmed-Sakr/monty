@@ -35,6 +35,7 @@ int main(int argc, char **argv)
 		execute_instruction(opcode, line_num, &stack);
 		line_num++;
 		free(line);
+		line = NULL;
 	}
 	if (line != NULL)
 		free(line);
