@@ -22,6 +22,7 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream)
 		*lineptr = malloc(*n);
 		if (*lineptr == NULL)
 		{
+			printf("Error: malloc failed\n");
 			status = -1;
 			return (-1);
 		}
@@ -34,6 +35,7 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream)
 			new_lineptr = malloc(new_n);
 			if (new_lineptr == NULL)
 			{
+				printf("Error: malloc failed\n");
 				status = -1;
 				return (-1);
 			}
@@ -52,6 +54,7 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream)
 	new_lineptr = malloc(pos + 1);
 	if (new_lineptr == NULL)
 	{
+		printf("Error: malloc failed\n");
 		status = -1;
 		return (-1);
 	}
