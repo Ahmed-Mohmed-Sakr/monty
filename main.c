@@ -17,6 +17,7 @@ int main(int argc, char **argv)
 	stack_t *stack = NULL;
 	char *line = NULL;
 
+	status = 0;
 	if (argc != 2)
 	{
 		printf("USAGE: monty file\n");
@@ -33,6 +34,11 @@ int main(int argc, char **argv)
 	{
 		opcode = strtok(line, " \t\n");
 		execute_instruction(opcode, line_num, &stack);
+
+
+		if (status == -1)
+			break;
+
 		line_num++;
 		free(line);
 		line = NULL;
@@ -41,5 +47,7 @@ int main(int argc, char **argv)
 		free(line);
 	free_stack(&stack);
 	fclose(opcode_file);
+	if (status == -1)
+		exit(EXIT_FAILURE);
 	return (0);
 }

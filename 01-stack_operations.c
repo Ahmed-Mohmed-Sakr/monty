@@ -16,16 +16,16 @@ void stack_push(stack_t **stack, unsigned int line_num)
 	if (arg == NULL || !is_all_digits(arg))
 	{
 		printf("L%d: usage: push integer\n", line_num);
-		free_stack(stack);
-		exit(EXIT_FAILURE);
+		status = -1;
+		return;
 	}
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
 		printf("Error: malloc failed\n");
-		free_stack(stack);
-		exit(EXIT_FAILURE);
+		status = -1;
+		return;
 	}
 
 	new_node->n = atoi(arg);

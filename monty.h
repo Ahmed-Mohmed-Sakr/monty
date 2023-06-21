@@ -8,6 +8,9 @@
 #include <string.h>
 #include <ctype.h>
 
+/*system status*/
+int status;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  *

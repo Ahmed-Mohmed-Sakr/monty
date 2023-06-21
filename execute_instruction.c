@@ -30,5 +30,5 @@ void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack)
 		}
 	}
 	printf("L%d: unknown instruction %s\n", line_n, opcode);
-	exit(EXIT_FAILURE);
+	status = -1;
 }
