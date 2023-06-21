@@ -11,11 +11,11 @@
 int main(int argc, char **argv)
 {
 	FILE *opcode_file;
-	char *line = NULL;
 	char *opcode;
 	size_t line_len = 0;
 	unsigned int line_num = 1;
 	stack_t *stack = NULL;
+	char *line = NULL;
 
 	if (argc != 2)
 	{
@@ -35,7 +35,6 @@ int main(int argc, char **argv)
 		execute_instruction(opcode, line_num, &stack);
 		line_num++;
 		free(line);
-		line = NULL;
 	}
 	if (line != NULL)
 		free(line);
