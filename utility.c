@@ -1,6 +1,18 @@
 #include "monty.h"
 
 /**
+ * allocte_error - print error message.
+ *
+ * Return: -1
+ */
+int allocte_error(void)
+{
+	printf("Error: malloc failed\n");
+	status = -1;
+	return (-1);
+}
+
+/**
  * my_getline - clone to getline().
  *
  * @lineptr: place to write data.
@@ -21,11 +33,7 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream)
 		*n = 220;
 		*lineptr = malloc(*n);
 		if (*lineptr == NULL)
-		{
-			printf("Error: malloc failed\n");
-			status = -1;
-			return (-1);
-		}
+			return (allocte_error());
 	}
 	while ((c = getc(stream)) != EOF)
 	{
@@ -34,11 +42,7 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream)
 			new_n = *n + 10;
 			new_lineptr = malloc(new_n);
 			if (new_lineptr == NULL)
-			{
-				printf("Error: malloc failed\n");
-				status = -1;
-				return (-1);
-			}
+				return (allocte_error());
 			memcpy(new_lineptr, *lineptr, pos);
 			free(*lineptr);
 			*lineptr = new_lineptr;
@@ -53,11 +57,7 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream)
 	(*lineptr)[pos] = '\0';
 	new_lineptr = malloc(pos + 1);
 	if (new_lineptr == NULL)
-	{
-		printf("Error: malloc failed\n");
-		status = -1;
-		return (-1);
-	}
+		return (allocte_error());
 	memcpy(new_lineptr, *lineptr, pos + 1);
 	free(*lineptr);
 	*lineptr = new_lineptr;
