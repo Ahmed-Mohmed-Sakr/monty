@@ -11,14 +11,11 @@
 int main(int argc, char **argv)
 {
 	FILE *opcode_file;
-	char *line;
+	char *line = NULL;
 	char *opcode;
 	size_t line_len = 0;
 	unsigned int line_num = 1;
-	char *delim = " \t\n"; /*glopal var*/
-	stack_t **stack = NULL; /*glopal var*/
-
-	(void)stack;
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{
@@ -32,14 +29,17 @@ int main(int argc, char **argv)
 		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
 	while (my_getline(&line, &line_len, opcode_file) != -1)
 	{
-		opcode = strtok(line, delim);
-		execute_instruction(opcode, line_num, stack);
+		opcode = strtok(line, " \t\n");
+		execute_instruction(opcode, line_num, &stack);
 		line_num++;
+		free(line);
+		line = NULL;
 	}
-	free(line);
+	if (line != NULL)
+		free(line);
+	free_stack(&stack);
 	fclose(opcode_file);
 	return (0);
 }

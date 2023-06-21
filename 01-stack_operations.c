@@ -28,10 +28,13 @@ void stack_push(stack_t **stack, unsigned int line_num)
 
 	new_node->n = atoi(arg);
 	new_node->prev = NULL;
-	new_node->next = *stack;
+	new_node->next = NULL;
 	if (*stack != NULL)
-		(*stack)->prev = new_node;
+		new_node->next = *stack;
+		
+
 	*stack = new_node;
+	
 }
 
 /**
@@ -44,10 +47,13 @@ void stack_push(stack_t **stack, unsigned int line_num)
 */
 void stack_pall(stack_t **stack, unsigned int line_num)
 {
-	stack_t *node = *stack;
+	stack_t *node;
+
+	if (stack == NULL || *stack == NULL)
+		return;
 
 	(void) line_num;
-
+	node = *stack;
 	while (node != NULL)
 	{
 		printf("%d\n", node->n);
