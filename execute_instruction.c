@@ -18,6 +18,7 @@ void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack)
 		{"pint", stack_pint},
 		{"pop", stack_pop},
 		{"swap", stack_swap},
+		{"add", stack_add},
 		{NULL, NULL}
 	};
 
