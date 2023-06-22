@@ -55,6 +55,8 @@ void stack_add(stack_t **stack, unsigned int line_num);
 void stack_sub(stack_t **stack, unsigned int line_num);
 void stack_div(stack_t **stack, unsigned int line_num);
 void stack_mul(stack_t **stack, unsigned int line_num);
+void stack_mod(stack_t **stack, unsigned int line_num);
+
 
 /*utility functions*/
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
