@@ -15,7 +15,7 @@ void stack_push(stack_t **stack, unsigned int line_num)
 
 	if (arg == NULL || !is_integer(arg))
 	{
-		printf("L<%d>: usage: push integer\n", line_num);
+		fprintf(stderr, "L<%d>: usage: push integer\n", line_num);
 		status = -1;
 		return;
 	}
@@ -23,7 +23,7 @@ void stack_push(stack_t **stack, unsigned int line_num)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		printf("Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		status = -1;
 		return;
 	}
@@ -75,7 +75,7 @@ void stack_pint(stack_t **stack, unsigned int line_num)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		printf("L<%d>: can't pint, stack empty\n", line_num);
+		fprintf(stderr, "L<%d>: can't pint, stack empty\n", line_num);
 		status = -1;
 		return;
 	}
@@ -100,7 +100,7 @@ void stack_pop(stack_t **stack, unsigned int line_num)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		printf("L<%d>: can't pop an empty stack\n", line_num);
+		fprintf(stderr, "L<%d>: can't pop an empty stack\n", line_num);
 		status = -1;
 		return;
 	}

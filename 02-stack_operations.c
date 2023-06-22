@@ -17,7 +17,7 @@ void stack_swap(stack_t **stack, unsigned int line_num)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
-		printf("L<%d>: can't swap, stack too short\n", line_num);
+		fprintf(stderr, "L<%d>: can't swap, stack too short\n", line_num);
 		status = -1;
 		return;
 	}
@@ -46,7 +46,7 @@ void stack_add(stack_t **stack, unsigned int line_num)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
-		printf("L<%d>: can't add, stack too short\n", line_num);
+		fprintf(stderr, "L<%d>: can't add, stack too short\n", line_num);
 		status = -1;
 		return;
 	}

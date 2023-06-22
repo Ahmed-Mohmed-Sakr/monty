@@ -7,7 +7,7 @@
  */
 int allocte_error(void)
 {
-	printf("Error: malloc failed\n");
+	fprintf(stderr, "Error: malloc failed\n");
 	status = -1;
 	return (-1);
 }
