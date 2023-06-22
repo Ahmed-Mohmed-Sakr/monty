@@ -21,6 +21,7 @@ void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack)
 		{"add", stack_add},
 		{"sub", stack_sub},
 		{"div", stack_div},
+		{"mul", stack_mul},
 		{NULL, NULL}
 	};
 
