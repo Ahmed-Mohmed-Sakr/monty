@@ -23,13 +23,13 @@ void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack)
 		{"div", stack_div},
 		{"mul", stack_mul},
 		{"mod", stack_mod},
-		/*{"pchar", stack_pchar},*/
-		{NULL, NULL}
+		{"pchar", stack_pchar},
+		{NULL, NULL},
 	};
 
 	if (opcode == NULL || strcmp("nop", opcode) == 0)
 		return;
-	if (strcmp("#", opcode))
+	if (strcmp("#", opcode) == 0)
 		return;
 
 	for (i = 0; instructions[i].opcode != NULL; i++)
