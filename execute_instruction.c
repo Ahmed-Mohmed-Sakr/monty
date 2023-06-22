@@ -23,7 +23,7 @@ void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack)
 		{"div", stack_div},
 		{"mul", stack_mul},
 		{"mod", stack_mod},
-		{"pchar", stack_pchar},
+		/*{"pchar", stack_pchar},*/
 		{NULL, NULL}
 	};
 
