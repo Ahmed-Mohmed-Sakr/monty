@@ -32,9 +32,10 @@ int main(int argc, char **argv)
 	}
 	while (my_getline(&line, &line_len, opcode_file) != -1)
 	{
+		/*
 		if (status == -1)
 			break;
-
+*/
 		opcode = strtok(line, " \t\n");
 		execute_instruction(opcode, line_num, &stack);
 
