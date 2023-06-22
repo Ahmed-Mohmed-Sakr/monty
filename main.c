@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file <%s>\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (my_getline(&line, &line_len, opcode_file) != -1)
+	while (getline(&line, &line_len, opcode_file) != -1)
 	{
 		if (status == -1)
 			break;
