@@ -29,7 +29,7 @@ void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack)
 
 	if (opcode == NULL || strcmp("nop", opcode) == 0)
 		return;
-	if (strcmp("#", opcode) == 0)
+	if (opcode[0] == '#')
 		return;
 
 	for (i = 0; instructions[i].opcode != NULL; i++)
