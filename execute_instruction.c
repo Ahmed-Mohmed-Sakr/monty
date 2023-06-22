@@ -33,6 +33,6 @@ void execute_instruction(char *opcode, unsigned int line_n, stack_t **stack)
 			return;
 		}
 	}
-	fprintf(stderr, "L<%d>: unknown instruction %s\n", line_n, opcode);
+	fprintf(stderr, "L<%d>: unknown instruction <%s>\n", line_n, opcode);
 	status = -1;
 }

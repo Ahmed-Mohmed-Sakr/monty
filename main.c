@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	opcode_file = fopen(argv[1], "r");
 	if (opcode_file == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file <%s>\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while (my_getline(&line, &line_len, opcode_file) != -1)
