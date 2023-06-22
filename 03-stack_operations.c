@@ -74,7 +74,6 @@ void stack_mod(stack_t **stack, unsigned int line_num)
 */
 void stack_pchar(stack_t **stack, unsigned int line_num)
 {
-	stack_t *node;
 	int temp;
 
 	if (stack == NULL || *stack == NULL)

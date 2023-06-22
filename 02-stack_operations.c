@@ -13,8 +13,6 @@ void stack_swap(stack_t **stack, unsigned int line_num)
 	stack_t *node;
 	int temp;
 
-	(void) line_num;
-
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L<%d>: can't swap, stack too short\n", line_num);
@@ -41,8 +39,6 @@ void stack_swap(stack_t **stack, unsigned int line_num)
 void stack_add(stack_t **stack, unsigned int line_num)
 {
 	stack_t *node;
-
-	(void) line_num;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
@@ -72,8 +68,6 @@ void stack_sub(stack_t **stack, unsigned int line_num)
 {
 	stack_t *node;
 
-	(void) line_num;
-
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L<%d>: can't sub, stack too short\n", line_num);
@@ -101,8 +95,6 @@ void stack_sub(stack_t **stack, unsigned int line_num)
 void stack_div(stack_t **stack, unsigned int line_num)
 {
 	stack_t *node;
-
-	(void) line_num;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
