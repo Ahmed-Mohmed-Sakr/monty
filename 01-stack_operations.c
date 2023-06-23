@@ -15,7 +15,7 @@ void stack_push(stack_t **stack, unsigned int line_num)
 
 	if (arg == NULL || !is_integer(arg))
 	{
-		fprintf(stderr, "L<%d>: usage: push integer\n", line_num);
+		fprintf(stderr, "L%d: usage: push integer\n", line_num);
 		status = -1;
 		return;
 	}
@@ -73,7 +73,7 @@ void stack_pint(stack_t **stack, unsigned int line_num)
 {
 	if (stack == NULL || *stack == NULL)
 	{
-		fprintf(stderr, "L<%d>: can't pint, stack empty\n", line_num);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
 		status = -1;
 		return;
 	}
@@ -97,7 +97,7 @@ void stack_pop(stack_t **stack, unsigned int line_num)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		fprintf(stderr, "L<%d>: can't pop an empty stack\n", line_num);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_num);
 		status = -1;
 		return;
 	}
